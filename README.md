@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# Portfolio Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I created this portfolio to use as my own but ended up doing something else entirely. However, instead of keeping it buried, I decided to put it up here on GitHub as an open-source resource to help individuals to learn, adapt, and create their own portfolios. Feel free to customize and modify the theme and components to suit your personal style and branding preferences.
 
-## Available Scripts
+## License and Attribution
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+- React.js
+- TailwindCSS
+- Three.js
+- Framer Motion
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Live Demo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Click [here](/) to view the live demo.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get started with this portfolio template, follow these simple steps:
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Make sure you have node `16.0.0` or higher and npm `9.0.0` or higher installed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Usage
 
-### `npm run eject`
+- Run the following command to start a local server:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm run dev
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will open up the project on a browser on `http://localhost:5173/`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Build
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- To create a production build:
 
-## Learn More
+```
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- To preview the site as it will appear once deployed:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm run preview
+```
+
+## Authors
+
+👤 **Rupinder Singh**
+
+## Feedback and Contributions
+
+If you have any feedback, suggestions, or would like to contribute to this project, your involvement is highly valued. Feel free to open an [issue](../../issues/) or submit a pull request with your ideas and enhancements. Remember, this template is a starting point, and the true magic lies in making it your own. Enjoy the journey of creating a stunning portfolio that represents your unique talents and accomplishments!
+
+Happy coding and showcasing!
+
+## Show your support
+
+Give a ⭐️ if you like this project!

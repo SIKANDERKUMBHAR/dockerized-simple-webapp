@@ -1,23 +1,33 @@
-# Use the official Node.js image as a base
-FROM node:14
+# Use an official Node.js runtime as a parent image
+FROM node:18-alpine AS build
 
 # Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy package.json and pnpm-lock.yaml to the working directory
+COPY package.json pnpm-lock.yaml ./
+
+# Install pnpm
+RUN npm install -g pnpm
 
 # Install dependencies
-RUN npm install
+RUN pnpm install
 
-# Copy the rest of the application code
+# Copy the rest of the application files
 COPY . .
 
-# Build the Angular project
-RUN npm run build --prod
+# Build the application
+RUN pnpm run build
 
-# Expose the port the app runs on
-EXPOSE 4200
+# Use an official Nginx image to serve the built files
+FROM nginx:alpine
 
-# Start the Angular application
-CMD ["npm", "start"]
+# Copy the built files from the build stage to the Nginx web root
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
+
