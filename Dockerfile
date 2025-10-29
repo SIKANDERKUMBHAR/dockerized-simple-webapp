@@ -1,20 +1,23 @@
-# Use a minimal Nginx image based on Alpine
-FROM nginx:alpine
+# Use the official Node.js image as a base
+FROM node:14
 
-# Set the working directory to Nginx's default html directory
-WORKDIR /usr/share/nginx/html
+# Set the working directory
+WORKDIR /app
 
-# Remove the default Nginx static website files
-RUN rm -rf ./*
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# Copy only necessary files into the Nginx html directory
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
 COPY . .
 
-# Clean up unnecessary files if any (like .git, node_modules, etc.)
-RUN rm -rf /usr/share/nginx/html/.git /usr/share/nginx/html/node_modules
+# Build the Angular project
+RUN npm run build --prod
 
-# Expose port 80 to the host
-EXPOSE 80
+# Expose the port the app runs on
+EXPOSE 4200
 
-# Start Nginx when the container starts
-CMD ["nginx", "-g", "daemon off;"]
+# Start the Angular application
+CMD ["npm", "start"]
